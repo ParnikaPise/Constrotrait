@@ -381,10 +381,11 @@ export default function CommunicationCenterPage() {
       ) : (
 
         /* Chat / Direct Messages Tab (Exactly as Mockup) */
-        <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: '20px', flex: 1, overflow: 'hidden', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: '20px', flex: 1,minHeight: 0, overflow: 'hidden', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '16px' }}>
           
           {/* Left panel: Contacts list */}
-          <div style={{ borderRight: '1px solid var(--border)', display: 'flex', flexDirection: 'column', background: 'rgba(18, 18, 26, 0.4)' }}>
+          <div style={{ borderRight: '1px solid var(--border)', display: 'flex', height: '100%',
+    minHeight: 0, flexDirection: 'column', background: 'rgba(18, 18, 26, 0.4)' }}>
             <div style={{ padding: '16px', display: 'flex', gap: '8px' }}>
               <div className="search-bar" style={{ background: 'var(--surface-2)', flex: 1 }}>
                 <Search size={16} />
