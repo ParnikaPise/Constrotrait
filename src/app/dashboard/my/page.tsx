@@ -153,10 +153,10 @@ export default function MyDashboardPage() {
   }
 
   return (
-    <div className="page-content" style={{ padding: '32px 40px', maxWidth: '1600px', margin: '0 auto' }}>
+    <div className="page-content dashboard-page-content" style={{ padding: '32px 40px', maxWidth: '1600px', margin: '0 auto' }}>
       
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
+      <div className="dashboard-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
         <div>
           <h1 style={{ fontSize: '32px', fontWeight: 800, color: 'var(--text-primary)', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
             {greeting}, {currentUser?.firstName}! <span style={{ fontSize: '28px' }}>👋</span>
@@ -177,7 +177,7 @@ export default function MyDashboardPage() {
       </div>
 
       {/* Top Stat Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', marginBottom: '32px' }}>
+      <div className="dashboard-stats" style={{ display: 'grid', gap: '20px', marginBottom: '32px' }}>
         
         {/* Tasks */}
         <Link href="/dashboard/tasks/my" style={{ textDecoration: 'none' }}>
@@ -256,7 +256,7 @@ export default function MyDashboardPage() {
         </Link>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 320px', gap: '24px', marginBottom: '24px' }}>
+      <div className="dashboard-main-grid" style={{ display: 'grid', gap: '24px', marginBottom: '24px' }}>
         
         {/* My Tasks */}
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '16px', padding: '24px' }}>
@@ -368,12 +368,12 @@ export default function MyDashboardPage() {
       </div>
 
       {/* Bottom Section */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '24px' }}>
+      <div className="dashboard-bottom-grid" style={{ display: 'grid', gap: '24px' }}>
         
         <div>
           {/* Quick Actions */}
           <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '16px' }}>Quick Actions</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
+          <div className="dashboard-action-grid" style={{ display: 'grid', gap: '16px', marginBottom: '32px' }}>
             
             <Link href="/dashboard/worklogs" style={{ textDecoration: 'none' }}>
               <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)', padding: '16px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '12px', transition: 'all 0.2s', cursor: 'pointer' }} className="hover:bg-[rgba(99,102,241,0.15)]">

@@ -258,6 +258,55 @@ tbody td { padding: 14px 16px; font-size: 14px; color: var(--text-primary); }
 .form-group { margin-bottom: 16px; }
 .form-label { display: block; font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px; }
 
+/* Dashboard Responsive Helpers */
+.dashboard-header { gap: 16px; }
+.dashboard-stats, .dashboard-main-grid, .dashboard-bottom-grid, .dashboard-action-grid { align-items: stretch; }
+.dashboard-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.dashboard-main-grid { grid-template-columns: 1fr 1fr 320px; }
+.dashboard-bottom-grid { grid-template-columns: 1fr 320px; }
+.dashboard-action-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.dashboard-stats > a,
+.dashboard-main-grid > div,
+.dashboard-bottom-grid > div,
+.dashboard-action-grid > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.dashboard-stats > a > div,
+.dashboard-action-grid > a > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 1280px) {
+  .page-content { padding: 24px 20px; }
+  .dashboard-header { flex-wrap: wrap; align-items: flex-start; }
+  .dashboard-header > div:last-child { margin-left: auto; }
+  .dashboard-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dashboard-main-grid { grid-template-columns: 1fr 320px; }
+}
+
+@media (max-width: 900px) {
+  .dashboard-header { flex-direction: column; align-items: flex-start; }
+  .dashboard-header > div:last-child { margin-left: 0; width: 100%; }
+  .dashboard-stats { grid-template-columns: 1fr; }
+  .dashboard-main-grid { grid-template-columns: 1fr; }
+  .dashboard-bottom-grid { grid-template-columns: 1fr; }
+  .dashboard-action-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dashboard-action-grid > a { min-width: 0; }
+}
+
+@media (max-width: 640px) {
+  .page-content { padding: 16px 14px; }
+  .dashboard-action-grid { grid-template-columns: 1fr; }
+  .dashboard-main-grid > div, .dashboard-bottom-grid > div { width: 100%; }
+  .dashboard-stats > a, .dashboard-stats > div { width: 100%; }
+  .dashboard-main-grid, .dashboard-bottom-grid { gap: 18px; }
+}
+
 /* Modal */
 .modal-overlay {
   position: fixed; inset: 0;
