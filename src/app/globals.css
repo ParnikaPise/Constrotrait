@@ -329,7 +329,12 @@ tbody td { padding: 14px 16px; font-size: 14px; color: var(--text-primary); }
   max-width: 520px;
   max-height: 90vh;
   overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
   animation: modalIn 0.2s ease;
+}
+.modal::-webkit-scrollbar {
+  display: none;
 }
 @keyframes modalIn {
   from { opacity: 0; transform: scale(0.95) translateY(10px); }

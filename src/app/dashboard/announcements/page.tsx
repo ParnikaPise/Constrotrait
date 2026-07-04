@@ -56,6 +56,8 @@ export default function CommunicationCenterPage() {
         { event: 'INSERT', schema: 'public', table: 'messages' },
         (payload) => {
           const newMsg = payload.new
+          if (!newMsg) return
+
           if (newMsg.sender_id === currentUser.id || newMsg.receiver_id === currentUser.id) {
             fetchMessagesOnly()
           }
@@ -63,7 +65,12 @@ export default function CommunicationCenterPage() {
       )
       .subscribe()
 
+    const intervalId = window.setInterval(() => {
+      fetchMessagesOnly()
+    }, 10000)
+
     return () => {
+      window.clearInterval(intervalId)
       supabase.removeChannel(channel)
     }
   }, [currentUser])
@@ -174,11 +181,20 @@ export default function CommunicationCenterPage() {
       content: msgInput.trim()
     }
 
+    const messageToSend = {
+      ...payload,
+      created_at: new Date().toISOString(),
+      sender: currentUser,
+      receiver: employees.find(emp => emp.id === activeContactId) || null
+    }
+
     setMsgInput('') // Clear input immediately for responsive UI
+    setMessages(prev => [...prev, messageToSend])
 
     const { error } = await supabase.from('messages').insert(payload)
     if (error) {
       alert(error.message)
+      setMessages(prev => prev.filter(m => m.id !== payload.id))
     } else {
       fetchMessagesOnly()
     }
