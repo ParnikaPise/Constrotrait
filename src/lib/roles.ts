@@ -170,6 +170,10 @@ export const PERMISSIONS = {
       'HR',
     ].includes(role),
 
+  // Projects (Managers + Accountant can view)
+  manageProjects: (role: UserRole) =>
+    [...MANAGER_ROLES, 'ACCOUNTANT' as UserRole].includes(role),
+
   // Rulebook
   manageRulebook: (role: UserRole) =>
     MANAGER_ROLES.includes(role),

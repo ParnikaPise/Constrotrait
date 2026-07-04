@@ -3150,7 +3150,7 @@ box-shadow:
                   <div
                     className="sentiment-segment"
                     style={{
-                      backgroundColor: "#3b82f6",
+                      backgroundColor: "#4f46e5",
                       width: `${productivityMetrics.sentimentSplits.GOOD}%`,
                     }}
                   >
@@ -3211,7 +3211,7 @@ box-shadow:
                       width: "12px",
                       height: "12px",
                       borderRadius: "3px",
-                      backgroundColor: "#3b82f6",
+                      backgroundColor: "#4f46e5",
                     }}
                   />
                   <span>
@@ -3316,6 +3316,7 @@ box-shadow:
                           backgroundColor: "#f8fafc",
                           borderRadius: "4px",
                           fontSize: "13px",
+                          color:"var(--text-muted)"
                         }}
                       >
                         <span style={{ fontWeight: 500 }}>{details.name}</span>

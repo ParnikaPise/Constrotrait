@@ -56,9 +56,9 @@ export default function ExecutiveDashboard() {
   const statCards = [
     { label: 'Total Employees', value: stats.totalEmployees, icon: Users, color: 'purple', href: '/dashboard/employees' },
     { label: 'Active Branches', value: stats.activeBranches, icon: GitBranch, color: 'blue', href: '/dashboard/branches' },
-    { label: 'Present Today', value: stats.presentToday, icon: CalendarCheck, color: 'green', href: '/dashboard/attendance' },
-    { label: 'Pending Leaves', value: stats.pendingLeaves, icon: Clock, color: 'amber', href: '/dashboard/leaves' },
-    { label: 'Pending EODs', value: stats.pendingEODs, icon: FileText, color: 'red', href: '/dashboard/worklogs' },
+    // { label: 'Present Today', value: stats.presentToday, icon: CalendarCheck, color: 'green', href: '/dashboard/attendance' },
+    // { label: 'Pending Leaves', value: stats.pendingLeaves, icon: Clock, color: 'amber', href: '/dashboard/leaves' },
+    // { label: 'Pending EODs', value: stats.pendingEODs, icon: FileText, color: 'red', href: '/dashboard/worklogs' },
     { label: 'Active Tasks', value: stats.pendingTasks, icon: CheckSquare, color: 'purple', href: '/dashboard/tasks' },
     { label: 'Monthly Income', value: formatCurrency(stats.totalIncome), icon: TrendingUp, color: 'green', href: '/dashboard/finance/income' },
     { label: 'Monthly Expenses', value: formatCurrency(stats.totalExpenses), icon: TrendingDown, color: 'red', href: '/dashboard/finance/expenses' },
