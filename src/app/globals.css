@@ -88,21 +88,7 @@ body {
 .btn-sm { padding: 6px 12px; font-size: 12px; }
 
 /* Input */
-.input {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 14px;
-  width: 100%;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.1); }
-.input::placeholder { color: var(--text-muted); }
-
-/* Select */
+.input,
 .select {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -111,10 +97,27 @@ body {
   padding: 10px 14px;
   font-size: 14px;
   width: 100%;
+  min-height: 44px;
   outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  display: block;
+}
+.input:focus,
+.select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.1); }
+.input::placeholder { color: var(--text-muted); }
+
+/* Select */
+.select {
   cursor: pointer;
 }
-.select:focus { border-color: var(--primary); }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
 
 /* Badge */
 .badge {
