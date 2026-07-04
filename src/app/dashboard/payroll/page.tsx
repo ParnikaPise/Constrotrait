@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
-import { Check, Download, PlayCircle, Search, DollarSign } from 'lucide-react'
+import { Check, Download, PlayCircle, Search, DollarSign, Clock } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils'
 
 export default function PayrollPage() {
